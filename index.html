@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biozard Word Rp</title>
+  <style>
+    html {
+      scroll-behavior: auto;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('https://i.pinimg.com/736x/e7/da/5b/e7da5b4ce5e592a26739091f6821e9f5.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      animation: fadeIn 2s ease-in;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 0, 0, 0);
+      z-index: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      background: rgb(0, 0, 0);
+      backdrop-filter: blur(5px);
+    }
+    header img.logo {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #000000;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 80px 20px 50px;
+      text-align: center;
+    }
+    h1, h2 {
+      text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    }
+    p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .ip-box {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      margin-top: 15px;
+      border: 1px solid red;
+    }
+    .copy-btn {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .copy-btn:hover {
+      background-color: #ff777725;
+    }
+    a {
+      color: #ffdddd;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    ul li::before {
+      content: "✅ ";
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn.discordapp.com/icons/1255288137844920350/253f9f89f3598a638e56873c1b87adc0.png?size=2048" alt="Logo do Servidor" class="logo">
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#regras">Regras</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container" id="inicio">
+    <h1>Biozard Word PvP</h1>
+    <p>💬 Entre no nosso <a href="https://discord.gg/qBBry6Aykp" target="_blank">Discord</a></p>
+    <div class="ip-box">
+      📡 IP do Servidor: <strong id="server-ip">123.456.789.123:7777</strong>
+      <button class="copy-btn" onclick="copiarIP()">Copiar IP</button>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <h2>Sobre o Servidor</h2>
+    <p>Somos um servidor focado em Somos Um Servidor Focado em Trazer Uma Jogabilidade tranquila para os jogadores,uma equipe focada em trazer o melhor para os player e sempre evoluir!!</p>
+  </section>
+
+  <section id="regras">
+    <h2>Regras Básicas do Servidor BWRP</h2>
+    <ul>
+      <li>PROIBIDO USO DE CHEATS PARA OBTER VANTAGEM,SUJEITO A BANIMENTO PERMANENTE!</li>
+      <li>RESPEITO ENTRE OS OUTROS PLAYER,DEPENDENDO DA GRAVIDADE DA OFENSA,BAN!</li>
+      <li>SERVIDOR FOCADO PARA TREINAMENTO DE TIRO,REGRAS NO ARQUIVO!</li>
+      <li>NO /LOJA VOCE CONSEGUE OBTER VANTAGENS NO SERVIDOR!</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Para dúvidas, sugestões ou denúncias, fale com a equipe pelo nosso Discord:</p>
+    <p><a href="https://discord.gg/qBBry6Aykp" target="_blank">Clique aqui para encontrar o suporte</a></p>
+  </section>
+
+  <script>
+    function copiarIP() {
+      const ip = document.getElementById('server-ip').textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        alert('IP copiado na sua area de transferencia');
+      });
+    }
+
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
